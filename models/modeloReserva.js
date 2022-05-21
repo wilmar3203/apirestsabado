@@ -25,7 +25,7 @@ const Reserva = new Schema({
         required:true
     },
     tarjetaCredito:{
-        type:Number,
+        type:String,
         required:true
     },
     idHabitacion:{
@@ -39,4 +39,4 @@ const Reserva = new Schema({
 })
 
 //se envia el modelo de datos
-const modeloReserva=mongoose.model('reservas', Reserva);
+ export const modeloReserva=mongoose.model('reservas', Reserva);

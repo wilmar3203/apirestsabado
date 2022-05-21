@@ -6,7 +6,7 @@ export class ControladorReserva{
 
     buscarPorId(request,response){
         
-        let datos = [{nombre:'wilmar',edad:27}]//borrar despues
+       
         let id=request.params.id
         console.log(id)
 

@@ -27,4 +27,4 @@ const Habitacion = new Schema({
 })
 
 //se envia el modelo de datos
-const modeloHabitacion=mongoose.model('habitaciones', Habitacion);
+ export const modeloHabitacion=mongoose.model('habitaciones', Habitacion);
