@@ -1,35 +1,8 @@
-//CONTROLADOR:
-//1. Recibir peticiones
-//2. ejecutar logica de negocio
-//3. llamar capa de SERVICIOS
-//4. Enviar respuestas al cliente
-export class ControladorHabitacion{
+export class ControladorReserva{
 
     constructor(){}
 
-    buscarTodas(request,response){
-
-        let datos = [{nombre:'wilmar',edad:27},{nombre:'alejandra',edad:29}]//borrar despues
-
-        try{//todo sale bien
-
-            response.status(200).json({
-                mensaje:"Exito buscando los datos",
-                data:datos,
-                estado:true
-            })
-
-        }catch(error){
-
-            response.status(400).json({
-                mensaje:"Error buscando los datos: "+error,
-                data:[],
-                estado:false
-            })
-        }
-
-        
-    }
+ 
 
     buscarPorId(request,response){
         
@@ -40,7 +13,7 @@ export class ControladorHabitacion{
         try{//todo sale bien
 
             response.status(200).json({
-                mensaje:"Exito buscando los datos"+id,
+                mensaje:"Exito buscando las reservas"+id,
                 data:datos,
                 estado:true
             })
@@ -48,20 +21,20 @@ export class ControladorHabitacion{
         }catch(error){
 
             response.status(400).json({
-                mensaje:"Error buscando los datos: "+error,
+                mensaje:"Error buscando la reserva: "+error,
                 data:[],
                 estado:false
             })
         }
     }
 
-    registar(request,response){
+    reservar(request,response){
 
         let datosPeticion=request.body
         try{
 
             response.status(200).json({
-                mensaje: "Exito agregando la habitacion",
+                mensaje: "Exito reservando la habitacion",
                 data:datosPeticion,
                 estado:true
 
@@ -71,7 +44,7 @@ export class ControladorHabitacion{
         }catch(error){
 
             response.status(400).json({
-                mensaje: "Fallamos agregando la habitacion",
+                mensaje: "Fallamos reservando la habitacion",
                 data:[],
                 estado:false
 
@@ -85,7 +58,7 @@ export class ControladorHabitacion{
         try{
 
             response.status(200).json({
-                mensaje: "Exito editando la habitacion",
+                mensaje: "Exito editando la reserva",
                 data:datosPeticion,
                 estado:true
 
@@ -94,7 +67,7 @@ export class ControladorHabitacion{
         }catch(error){
 
             response.status(400).json({
-                mensaje: "Fallamos editando la habitacion"+error,
+                mensaje: "Fallamos editando la reserva"+error,
                 data:[],
                 estado:false
 
@@ -110,7 +83,7 @@ export class ControladorHabitacion{
         try{
 
             response.status(200).json({
-                mensaje: "Exito eliminando la habitacion",
+                mensaje: "Exito eliminando la reserva",
                 data:[],
                 estado:true
 
@@ -119,7 +92,7 @@ export class ControladorHabitacion{
         }catch(error){
 
             response.status(400).json({
-                mensaje: "Fallamos eliminando la habitacion"+error,
+                mensaje: "Fallamos eliminando la reserva"+error,
                 data:[],
                 estado:false
 
