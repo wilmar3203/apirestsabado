@@ -4,37 +4,39 @@ const Schema = mongoose.Schema;//esquema de datos(datos tiene mi modelo)
 
 //creo mi propio esquema de datos
 const Reserva = new Schema({
-    nombreCliente:{
-        type:String,
-        required:true
+    nombreCliente: {
+        type: String,
+        required: true
     },
-    fechaIngreso:{
-        type:Date,
-        required:true
+
+    apellido: {
+        type: String,
+        required: true
     },
-    fechaSalida:{
-        type:String,
-        required:true
+
+    telefono: {
+        type: String,
+        required: true
     },
-    idCliente:{
-        type:String,
-        required:true
+
+    fechaIngreso: {
+        type: Date,
+        required: true
     },
-    pais:{
-        type:String,
-        required:true
+
+    fechaSalida: {
+        type: Date,
+        required: true
     },
-    tarjetaCredito:{
-        type:String,
-        required:true
+
+    numeroPersonas:{
+        type: Number,
+        required: true
     },
-    idHabitacion:{
-        type:String,
-        required:true
-    },
-    Costo:{
-        type:Number,
-        required:true
+
+    costo: {
+        type: Number,
+        required: true
     }
 })
 

@@ -1,11 +1,12 @@
+import { ServicioReservas } from '../services/ServicioReservas.js'
 export class ControladorReserva{
 
     constructor(){}
 
- 
+   
 
-    buscarPorId(request,response){
-        
+    async buscarPorId(request,response){
+        let servicioReserva = new ServicioReservas()
        
         let id=request.params.id
         console.log(id)
@@ -14,7 +15,7 @@ export class ControladorReserva{
 
             response.status(200).json({
                 mensaje:"Exito buscando las reservas"+id,
-                data:datos,
+                data:await servicioReserva.buscarPorId(id),
                 estado:true
             })
 
@@ -28,14 +29,15 @@ export class ControladorReserva{
         }
     }
 
-    reservar(request,response){
+    async reservar(request,response){
+        let servicioReserva = new ServicioReservas()
 
         let datosPeticion=request.body
         try{
-
+            await servicioReserva.registrar(datosPeticion)
             response.status(200).json({
                 mensaje: "Exito reservando la habitacion",
-                data:datosPeticion,
+                data:null,
                 estado:true
 
             })
@@ -52,14 +54,15 @@ export class ControladorReserva{
         }
     }
 
-    editar(request,response){
+   async editar(request,response){
+        let servicioReserva = new ServicioReservas()
         let id = request.params.id
         let datosPeticion = request.body
         try{
-
+            await servicioReserva.editar(id, datosPeticion)
             response.status(200).json({
                 mensaje: "Exito editando la reserva",
-                data:datosPeticion,
+                data:null,
                 estado:true
 
             })
@@ -77,14 +80,15 @@ export class ControladorReserva{
         }
     }
 
-    eliminar(request,response){
+    async eliminar(request,response){
+        let servicioReserva = new ServicioReservas()
         let id = request.params.id
 
         try{
-
+            await servicioReserva.eliminar(id)
             response.status(200).json({
                 mensaje: "Exito eliminando la reserva",
-                data:[],
+                data:null,
                 estado:true
 
             })

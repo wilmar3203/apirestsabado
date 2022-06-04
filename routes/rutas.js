@@ -21,6 +21,7 @@ export let rutas=express.Router()
   rutas.delete('/api/v1/sabado/:id',controladorHabitacion.eliminar)
 
   //RUTAS RESERVAS
+
   rutas.get('/api/v1/sabado/reservas/:id', controladorReserva.buscarPorId)  
   rutas.post('/api/v1/sabado/reservas', controladorReserva.reservar)
   rutas.put('/api/v1/sabado/reservas/:id', controladorReserva.editar)
